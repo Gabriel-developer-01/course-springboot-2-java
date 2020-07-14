@@ -12,8 +12,9 @@ import com.educandoweb.course.entities.User;
 public class UserResource {
 
 	@GetMapping
-	public ResponseEntity<User> findAll(){
-		User u = new User(1L, "Maria", "maria@gmail.com", "9999999", "12345");
-		return ResponseEntity.ok().body(u);
+	public ResponseEntity<User> findAll(){ // o tipo ResponseEntity retorna respostas de requisições web
+		 User u = new User(1L, "Maria", "maria@gmail.com", "9999999", "12345");
+		 return ResponseEntity.ok().body(u);
 	}
+	
 }

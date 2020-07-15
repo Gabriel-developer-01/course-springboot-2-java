@@ -26,8 +26,9 @@ public class Product implements Serializable{
 	private Double price;
 	private String imgUrl;
 	
+	// tabela Product faz relacionamento muitos-para-muitos com a tabela Category,dessa forma,foi criada uma tabela associativa e dentro dela foi atribuida os id do product e category
 	@ManyToMany
-	@JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"),
+	@JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), 
 	inverseJoinColumns = @JoinColumn(name = "category_id"))
 	private Set<Category> categories = new HashSet<>(); //vou usar o Set para garantir que eu não vou ter 1 produto com mais de uma ocorrência da mesma categoria.
 	

@@ -91,8 +91,9 @@ public class Product implements Serializable{
 	public Set<Category> getCategories() {
 		return categories;
 	}
+	
 	@JsonIgnore
-	public Set<Order> getOrders(){
+	public Set<Order> getOrders(){ // método para varrer o OrderItem e pegar o Order associado ao OrderItem
 		Set<Order> set = new HashSet<>();
 		for(OrderItem x : items) {
 			set.add(x.getOrder());
